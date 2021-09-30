@@ -30,8 +30,13 @@ class NewDetailsScreen extends StatelessWidget {
         leading:
             const BackButton(color: Colors.black), // color of the back button
         elevation: 0,
-        title:
-            const Text("", style: TextStyle(color: Colors.blue, fontSize: 28)),
+        title: const Text(
+          "",
+          style: TextStyle(
+            color: Colors.blue,
+            fontSize: 28,
+          ),
+        ),
       ),
       body: Center(
         child: Container(
@@ -107,13 +112,17 @@ class NewDetailsScreen extends StatelessWidget {
                                   badgeContent: Text(
                                     status,
                                     style: const TextStyle(
-                                        fontSize: 24, color: Colors.white),
+                                      fontSize: 24,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                                 Text(
                                   date,
                                   style: const TextStyle(
-                                      fontSize: 24, color: Colors.grey),
+                                    fontSize: 24,
+                                    color: Colors.grey,
+                                  ),
                                   textAlign: TextAlign.left,
                                 ),
                               ],
@@ -123,16 +132,17 @@ class NewDetailsScreen extends StatelessWidget {
                             height: 48.0,
                           ),
                           Container(
-                              padding: const EdgeInsets.only(
-                                left: 32.0,
-                                right: 32.0,
-                                top: 8.0,
-                                bottom: 12.0,
-                              ),
-                              child: Text(
-                                "For more information visit: $link",
-                                style: const TextStyle(fontSize: 20),
-                              ),),
+                            padding: const EdgeInsets.only(
+                              left: 32.0,
+                              right: 32.0,
+                              top: 8.0,
+                              bottom: 12.0,
+                            ),
+                            child: Text(
+                              "For more information visit: $link",
+                              style: const TextStyle(fontSize: 20),
+                            ),
+                          ),
                         ],
                       ),
                     ),

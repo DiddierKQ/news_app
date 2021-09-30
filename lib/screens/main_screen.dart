@@ -33,21 +33,22 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: const Text("News app",
-              style: TextStyle(color: Colors.blue, fontSize: 28)),
-          actions: [
-            IconButton(
-              onPressed: () {
-                getNews();
-              },
-              icon: const Icon(
-                Icons.refresh,
-                color: Colors.black,
-              ),
-            )
-          ],),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Text("News app",
+            style: TextStyle(color: Colors.blue, fontSize: 28)),
+        actions: [
+          IconButton(
+            onPressed: () {
+              getNews();
+            },
+            icon: const Icon(
+              Icons.refresh,
+              color: Colors.black,
+            ),
+          )
+        ],
+      ),
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(16.0),
@@ -57,15 +58,24 @@ class _MainScreenState extends State<MainScreen> {
                   itemCount: _news.length,
                   itemBuilder: (bc, index) {
                     return GestureDetector(
-                      onTap: () { 
-                        Get.to(NewDetailsScreen(title: _news[index]['title']['rendered'], description: _news[index]['yoast_head_json']['description'], imageUrl: _news[index]['yoast_head_json']['og_image'][0]['url'], date: _news[index]['modified'], status: _news[index]['status'], link: _news[index]['link']));
+                      onTap: () {
+                        Get.to(NewDetailsScreen(
+                            title: _news[index]['title']['rendered'],
+                            description: _news[index]['yoast_head_json']
+                                ['description'],
+                            imageUrl: _news[index]['yoast_head_json']
+                                ['og_image'][0]['url'],
+                            date: _news[index]['modified'],
+                            status: _news[index]['status'],
+                            link: _news[index]['link']));
                       },
                       child: Container(
                         margin:
                             const EdgeInsets.only(left: 16, right: 16, top: 16),
                         decoration: const BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(16))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(16))),
                         child: Row(
                           children: [
                             Container(
@@ -92,19 +102,22 @@ class _MainScreenState extends State<MainScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      padding:
-                                          const EdgeInsets.only(right: 8, top: 4),
+                                      padding: const EdgeInsets.only(
+                                          right: 8, top: 4),
                                       child: Text(
                                         "${_news[index]['title']['rendered']}",
                                         style: const TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
                                     Text(
                                       "${_news[index]['yoast_head_json']['description']}",
                                       style: const TextStyle(
-                                          fontSize: 16, color: Colors.grey),
+                                        fontSize: 16,
+                                        color: Colors.grey,
+                                      ),
                                     ),
                                     const SizedBox(
                                       height: 8.0,
@@ -117,20 +130,23 @@ class _MainScreenState extends State<MainScreen> {
                                           toAnimate: false,
                                           shape: BadgeShape.square,
                                           badgeColor: Colors.blue,
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
                                           badgeContent: Text(
                                             "${_news[index]['status']}",
                                             style: const TextStyle(
-                                                fontSize: 16,
-                                                color: Colors.white),
+                                              fontSize: 16,
+                                              color: Colors.white,
+                                            ),
                                           ),
                                         ),
                                         Text(
                                           "${_news[index]['modified']}",
                                           style: const TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal,
-                                              color: Colors.grey),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.normal,
+                                            color: Colors.grey,
+                                          ),
                                         ),
                                       ],
                                     ),
